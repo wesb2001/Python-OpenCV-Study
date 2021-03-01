@@ -1,0 +1,16 @@
+# OpenCV @210301
+# imread / filter2D / np.ones / np.zeros /
+
+import numpy as np
+import cv2 as cv
+from matplotlib import pyplot as plt
+
+img = cv.imread('img/opencv-logo.png')
+
+kernel = np.ones((7,7), np.float32)/49
+dst = cv.filter2D(img, -1, kernel)
+
+cv.imshow('ORG', img)
+cv.imshow('AVG', dst)
+cv.waitKey(0)
+cv.destroyAllWindows()
